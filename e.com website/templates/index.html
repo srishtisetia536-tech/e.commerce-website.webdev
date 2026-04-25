@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GlowCare</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<h1>🌸 GlowCare</h1>
+<p>Glow naturally. Feel beautiful ✨</p>
+<a href="/cart">🛒 Cart</a>
+
+<div class="container">
+    {% for p in products %}
+    <div class="card">
+        <img src="{{ p[3] }}">
+        <h3>{{ p[1] }}</h3>
+        <p>₹ {{ p[2] }}</p>
+        <a href="/add_to_cart/{{ p[0] }}">
+            <button>Add to Cart</button>
+        </a>
+    </div>
+    {% endfor %}
+</div>
+
+</body>
+</html>
